@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>あれなんだっけ？</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@800&family=Bangers&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">『あれなんだっけ？』</h1>
+            <p class="subtitle">思い出せないあらゆる単語を、ヒントから探し出すアプリ</p>
+        </header>
+
+        <!-- 上段パネル（入力エリア） -->
+        <section class="panel upper-panel" id="input-section">
+            <div class="illustration-wrapper">
+                <img src="images/confused_woman.png" alt="悩んでいる女性" class="illustration confused">
+            </div>
+            
+            <div class="speech-bubble input-bubble">
+                <p class="bubble-text">あれなんだっけ…？</p>
+                <form id="search-form">
+                    <input
+                        type="text"
+                        id="keywords-input"
+                        placeholder="例：トム・クルーズ 元妻 オーストラリア 女優 金髪"
+                        required>
+                    <button type="submit" id="search-btn" class="boom-btn">
+                        <span>SEARCH</span>
+                    </button>
+                </form>
+                <div id="loading-indicator" class="hidden">
+                    <p class="loading-text">検索中・・・</p>
+                </div>
+                <div id="error-message" class="hidden error-text"></div>
+            </div>
+        </section>
+
+        <!-- 下段パネル（結果エリア） -->
+        <section class="panel lower-panel hidden" id="result-section">
+            <div class="illustration-wrapper">
+                <img src="images/inspired_woman.png" alt="ひらめいた女性" class="illustration inspired">
+            </div>
+            
+            <div class="speech-bubble result-bubble">
+                <div class="idea-text">あっ！</div>
+                <div id="top-result" class="top-result-text"></div>
+            </div>
+
+            <div class="results-list" id="other-results">
+                <!-- 検索結果がここに入る -->
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
