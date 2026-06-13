@@ -88,6 +88,15 @@ body {
     max-width: 250px;
     margin-bottom: -20px;
     z-index: 2;
+    max-height: 300px;
+    overflow: hidden;
+    transition: max-height 0.4s ease, margin-bottom 0.4s ease, opacity 0.3s ease;
+}
+
+.illustration-collapsed {
+    max-height: 0 !important;
+    margin-bottom: 0 !important;
+    opacity: 0;
 }
 
 .illustration {
@@ -302,6 +311,8 @@ input[type="text"]:focus {
     font-size: 1.2rem;
     font-weight: bold;
     margin: 0 0 5px 0;
+    word-break: break-word;
+    overflow: hidden;
 }
 
 .result-desc {
@@ -312,6 +323,73 @@ input[type="text"]:focus {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    word-break: break-word;
+}
+
+/* もっと見るボタン */
+.more-btn {
+    background: var(--pop-blue);
+    color: var(--white);
+    border: 3px solid var(--black);
+    padding: 8px 24px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px var(--black);
+    align-self: center;
+    transition: transform 0.1s;
+}
+
+.more-btn:hover {
+    transform: scale(1.05);
+}
+
+.more-btn:active {
+    transform: scale(0.95);
+    box-shadow: 1px 1px 0px var(--black);
+}
+
+/* 最近の検索タグ */
+.recent-searches {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+}
+
+.recent-label {
+    font-size: 0.72rem;
+    color: #666;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.recent-tag {
+    background: var(--pop-yellow);
+    border: 2px solid var(--black);
+    color: var(--black);
+    font-family: inherit;
+    font-size: 0.72rem;
+    font-weight: bold;
+    padding: 3px 9px;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px var(--black);
+    transition: transform 0.1s;
+    max-width: 160px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.recent-tag:hover {
+    transform: scale(1.05);
+}
+
+.recent-tag:active {
+    transform: scale(0.95);
+    box-shadow: 1px 1px 0px var(--black);
 }
 
 @keyframes popIn {

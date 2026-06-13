@@ -28,7 +28,7 @@ export default async function handler(req, res) {
                 query: keywords,
                 search_depth: "basic",
                 include_answer: false,
-                max_results: 3
+                max_results: 6
             })
         });
 
